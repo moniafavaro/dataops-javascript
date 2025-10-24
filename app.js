@@ -64,10 +64,6 @@ const generateChart = async (timestamps, temps) => {
             }]
         },
         options: {
-            plugins: {
-                legend: { display: true, position: 'top' },
-                title: { display: true, text: 'Temperature Over Time' }
-            },
             scales: {
                 x: { title: { display: true, text: 'Data' } },
                 y: { title: { display: true, text: 'Temperature C' } }
