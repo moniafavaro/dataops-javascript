@@ -4,7 +4,6 @@ import path from 'path'
 import csv from 'csv-parser'
 import { ChartJSNodeCanvas } from 'chartjs-node-canvas'
 import dayjs from 'dayjs'
-import { rejects } from 'assert'
 
 const app = express()
 
