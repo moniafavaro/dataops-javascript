@@ -31,7 +31,7 @@ jobs:
         env:
           WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
           WEATHER_CITY: ${{ secrets.CITY }}
-        run: node fetchWeather.json
+        run: node fetchWeather.js
 
       - name: Run tests
         run: npm test
@@ -45,5 +45,4 @@ jobs:
           git push || echo "Push failed or no changes"
 
       - name: Trigger Render Deploy
-        if: ${{ secrets.RENDER_DEPLOY_HOOK != '' }}
         run: curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}
