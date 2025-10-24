@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather Dashboard with JS</title>
+</head>
+<body>
+    <div id="weather">
+        <p>Loading weather data.....</p>
+    </div>
+    <div id="plot-card">
+        <h2>Temperature over Time</h2>
+        <img id="plot" src="/plot.png" alt="Temperature Trend">
+    </div>
+
+    <script>
+        async function loadWeather() {
+            try {
+                const res = await fetch('/api/weather')
+                const weather = await res.json()
+
+                document.getElementById('weather').innerHTML = `
+                    <h2> ${weather.name} </h2>
+                    <p>Temperature: ${weather.main.temp} </p>
+                    <p>Condition: ${weather.weather[0].description} </p>
+                `
+            } catch (err) {
+                document.getElementById('weather').innerHTML = '<p>Failed to load weather data.</p>'
+            }
+        }
+        loadWeather()
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 24px;
+  background: #f7f9fb;
+  color: #222;
+}
+.card {
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+h1 { 
+    color: #053886;
+}
+
+#plot-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

@@ -1,0 +1,49 @@
+name: Weather Pipeline CI/CD (JS)
+
+on:
+  push:
+  schedule:
+    - cron: '0 */2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  test_and_fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Use Node.JS
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Cache Node modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+      
+      - name: Fetch latest Weather
+        env:
+          WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
+          WEATHER_CITY: ${{ secrets.CITY }}
+        run: node fetchWeather.json
+
+      - name: Run tests
+        run: npm test
+
+      - name: Commit weather data if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/weather.json data/weather_log.csv || true
+          git commit -m "ci: update weather data" || echo "No changes to commit"
+          git push || echo "Push failed or no changes"
+
+      - name: Trigger Render Deploy
+        if: ${{ secrets.RENDER_DEPLOY_HOOK != ''}}
+        run: curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}
