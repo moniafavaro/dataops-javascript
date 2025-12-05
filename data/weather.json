@@ -5,35 +5,35 @@
   },
   "weather": [
     {
-      "id": 803,
+      "id": 804,
       "main": "Clouds",
-      "description": "broken clouds",
+      "description": "overcast clouds",
       "icon": "04d"
     }
   ],
   "base": "stations",
   "main": {
-    "temp": 2.68,
-    "feels_like": 2.68,
-    "temp_min": 1.12,
-    "temp_max": 3.95,
-    "pressure": 1007,
-    "humidity": 93,
-    "sea_level": 1007,
+    "temp": 5.07,
+    "feels_like": 3.98,
+    "temp_min": 3.06,
+    "temp_max": 6.25,
+    "pressure": 1006,
+    "humidity": 91,
+    "sea_level": 1006,
     "grnd_level": 1003
   },
   "visibility": 10000,
   "wind": {
-    "speed": 1.03,
+    "speed": 1.54,
     "deg": 0
   },
   "clouds": {
-    "all": 82
+    "all": 87
   },
-  "dt": 1764923700,
+  "dt": 1764929724,
   "sys": {
     "type": 2,
-    "id": 2075535,
+    "id": 2091269,
     "country": "GB",
     "sunrise": 1764920966,
     "sunset": 1764949993
@@ -42,5 +42,5 @@
   "id": 2643743,
   "name": "London",
   "cod": 200,
-  "_last_updated_utc": "2025-12-05T08:35:11.999Z"
+  "_last_updated_utc": "2025-12-05T10:29:18.043Z"
 }
