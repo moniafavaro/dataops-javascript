@@ -13,24 +13,24 @@
   ],
   "base": "stations",
   "main": {
-    "temp": 24.62,
-    "feels_like": 24.08,
-    "temp_min": 23.77,
-    "temp_max": 25.14,
-    "pressure": 1019,
-    "humidity": 36,
-    "sea_level": 1019,
-    "grnd_level": 1015
+    "temp": 24.54,
+    "feels_like": 24.12,
+    "temp_min": 22.95,
+    "temp_max": 25.1,
+    "pressure": 1018,
+    "humidity": 41,
+    "sea_level": 1018,
+    "grnd_level": 1014
   },
   "visibility": 10000,
   "wind": {
-    "speed": 4.12,
-    "deg": 140
+    "speed": 3.6,
+    "deg": 180
   },
   "clouds": {
-    "all": 8
+    "all": 7
   },
-  "dt": 1777642344,
+  "dt": 1777646996,
   "sys": {
     "type": 2,
     "id": 268730,
@@ -42,5 +42,5 @@
   "id": 2643743,
   "name": "London",
   "cod": 200,
-  "_last_updated_utc": "2026-05-01T13:42:09.151Z"
+  "_last_updated_utc": "2026-05-01T15:02:42.444Z"
 }
